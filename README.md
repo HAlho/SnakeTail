@@ -27,10 +27,10 @@ The renderer class has an additional public function, *StartMenu* that creates t
 
 #### How this project satisfies the rubric:
 **1. The project demonstrates an understanding of C++ functions and control structures:**
-Appropriate control structures are used in menu.cpp according to situation such as If statements, do while, and while loops.
+Appropriate control structures are used in menu.cpp according to situation such as If statements, do while, and while loops. Found in menu.cpp lines 35,36,53.
 
 **2. The project accepts user input and processes the input:**
-The method getStateFromInput gets input from the user and changes the state of the variable selection according to the input
+The method getStateFromInput gets input from the user and changes the state of the variable selection according to the input. Found in Menu.cpp lines 35-41.
 
 **3. The project uses Object Oriented Programming techniques:**
 Implementation of class menu
@@ -39,13 +39,13 @@ Implementation of class menu
 Members of the class menu are made private if they will be accessed only inside the class implementation.
 
 **5. Class constructors utilize member initialization lists:**
-Intialization list used for all members of the class menu.
+Intialization list used for all members of the class menu. Found in menu.h line 10.
 
 **6. Classes abstract implementation details from their interfaces:**
-Each member is initialized through the initialization list in the constructor
+Each function in class menu implements what the function name describes. Example, *LoadImage* loads the image specified in the arguments while *showLogo* uses *LoadImage* to repeatedly diplay the image for five seconds. 
 
 **7. The project makes use of references in function declarations:**
-All three member variables use pointers while two functions *LoadImage* and *getStateFromInput* use pass-by-reference (the former uses a pointer *, and the later uses an lvalue reference &).
+All three member variables use pointers while two functions *LoadImage* and *getStateFromInput* use pass-by-reference (the former uses a pointer *, and the later uses an lvalue reference &). Found in menu.h lines 15,16,17,21,22.
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
