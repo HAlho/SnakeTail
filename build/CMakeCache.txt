@@ -25,18 +25,18 @@ CMAKE_BUILD_TYPE:STRING=
 CMAKE_COLOR_MAKEFILE:BOOL=ON
 
 //CXX compiler
-CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++-7
 
 //A wrapper around 'ar' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-5
+CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-7
 
 //A wrapper around 'ranlib' adding the appropriate '--plugin' option
 // for the GCC compiler
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-5
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-7
 
 //Flags used by the CXX compiler during all build types.
-CMAKE_CXX_FLAGS:STRING=
+CMAKE_CXX_FLAGS:STRING=-std=c++17
 
 //Flags used by the CXX compiler during DEBUG builds.
 CMAKE_CXX_FLAGS_DEBUG:STRING=-g
@@ -209,15 +209,6 @@ SDL2Test_SOURCE_DIR:STATIC=/home/workspace/capstone/CppND-Capstone-Snake-Game
 //The directory containing a CMake configuration file for SDL2.
 SDL2_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/SDL2
 
-//Path to a file.
-SDL2_IMAGE_INCLUDE_DIR:PATH=/usr/include/SDL2
-
-//The directory containing a CMake configuration file for SDL2_IMAGE_LIBRARIES.
-SDL2_IMAGE_LIBRARIES_DIR:PATH=SDL2_IMAGE_LIBRARIES_DIR-NOTFOUND
-
-//Path to a library.
-SDL2_IMAGE_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libSDL2_image.so
-
 
 ########################
 # INTERNAL cache entries
@@ -360,10 +351,4 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding SDL2_image
-FIND_PACKAGE_MESSAGE_DETAILS_SDL2_image:INTERNAL=[/usr/lib/x86_64-linux-gnu/libSDL2_image.so][/usr/include/SDL2][v()]
-//ADVANCED property for variable: SDL2_IMAGE_INCLUDE_DIR
-SDL2_IMAGE_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: SDL2_IMAGE_LIBRARY
-SDL2_IMAGE_LIBRARY-ADVANCED:INTERNAL=1
 

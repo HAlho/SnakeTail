@@ -17,9 +17,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   Uint32 frame_end;
   Uint32 frame_duration;
   int frame_count = 0;
-  bool running = true;
-  
-  renderer.StartMenu();
+  bool running = renderer.StartMenu();
 	  
   while (running) {
     frame_start = SDL_GetTicks();

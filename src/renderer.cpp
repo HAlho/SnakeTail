@@ -81,7 +81,9 @@ void Renderer::UpdateWindowTitle(int score, int fps) {
   SDL_SetWindowTitle(sdl_window, title.c_str());
 }
 
-void Renderer::StartMenu(){
-	menu m(sdl_renderer);
- 	m.startMenu();
+bool Renderer::StartMenu(){
+	menu m(sdl_renderer,"logo.bmp","snaketailmenu.bmp");
+ 	bool startGame=m.runMenu();
+  	if(!startGame) return false;
+    else return true;
 }

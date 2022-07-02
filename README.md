@@ -1,12 +1,51 @@
-# CPPND: Capstone Snake Game Example
+# Snake Game Extension
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+#### Running Instructions 
+1. Install SDL2 Library. ex, ```sudo apt-get install libsdl2-dev```
+2. Run ```cmake .. ``` and ```make ``` in the build directory
 
-<img src="snake_game.gif"/>
+#### Changes made into project
+1. Addition of menu.h and menu.cpp
+2. *StartMenu* function in *render.h* to create the menu object and call *runMenu*
+3. *StartMenu* is called before the game loop starts  
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+#### Overview of Code Structure
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+##### Menu Class
+The *menu* class is responsible for displaying the logo and menu scenes and transition to the next possible states: start the game or exit.
+When menu's public method, *runMenu*, is called by the renderer object it displays first the logo for 5 seconds, then displays the menu image until the user exits the program or starts the game.
+
+**There are three private member functions:**
+1. *LoadImage*:  uses the SDL_Renderer Object to display the image in the argument.
+2. *getStateFromInput*: change the MenuState variable, which is passed by reference, based on the input read from the SDL poll event.
+3. *showLogo*:  Repeatedly calls *LoadImage* to display the logo for 5 seconds.
+
+A menu object stores the pointers of the SDL_Renderer and the image directories as private members.
+
+##### Renderer and Game Class
+The renderer class has an additional public function, *StartMenu* that creates the menu object with the pointer to the SDL_Renderer and calls the method *runMenu*. It redirects the result of startMenu to running variable in class Game. 
+
+#### How this project satisfies the rubric:
+**1. The project demonstrates an understanding of C++ functions and control structures:**
+Appropriate control structures are used in menu.cpp according to situation such as If statements, do while, and while loops.
+
+**2. The project accepts user input and processes the input:**
+The method getStateFromInput gets input from the user and changes the state of the variable selection according to the input
+
+**3. The project uses Object Oriented Programming techniques:**
+Implementation of class menu
+
+**4. Classes use appropriate access specifiers for class members:**
+Members of the class menu are made private if they will be accessed only inside the class implementation.
+
+**5. Class constructors utilize member initialization lists:**
+Intialization list used for all members of the class menu.
+
+**6. Classes abstract implementation details from their interfaces:**
+Each member is initialized through the initialization list in the constructor
+
+**7. The project makes use of references in function declarations:**
+All three member variables use pointers while two functions *LoadImage* and *getStateFromInput* use pass-by-reference (the former uses a pointer *, and the later uses an lvalue reference &).
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
