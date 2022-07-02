@@ -1,4 +1,4 @@
-# Snake Game Extension
+# Snake Game Extension: A Menu Screen
 
 #### Running Instructions 
 1. Install SDL2 Library. ex, ```sudo apt-get install libsdl2-dev```
